@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+.container {
+    width: 95%;
+    max-width: 1280px;
+}
+.caption {
+    text-align: center;
+}
+.section1 {
+    position: relative;
+    --url: url('../assets/background/index-background.jpg');
+    background-size: cover;
+    background-position: 0;
+    height: 576px;
+    padding: 0px 0;
+    background-image: var(--url);
+    .overlay {
+        position: absolute;
+        bottom: 0px;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to top, transparent, rgba(0, 0, 0, 80%));
+        z-index: 0;
+    }
+    .container {
+        padding: 80px 0;
+        height: 496px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        .top {
+            gap: 24px;
+            color: white;
+        }
+        z-index: 2;
+    }
+}
+.section2 {
+    background-color: var(--bg-gray50);
+    .container {
+        gap: 64px;
+
+        .products {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            width: 100%;
+            .card {
+                box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
+                background-color: white;
+                border-radius: 5px;
+                width: calc((100% - (16px * 3)) / 4);
+                height: 400px;
+                .image {
+                    height: 60%;
+                    background-image: "./";
+                    background-position: 50%;
+                    background-size: 100%;
+                    border-radius: 5px 5px 0 0;
+                }
+                .text {
+                    padding: 8px 8px 0 8px;
+                    height: 30%;
+                }
+                .more-info {
+                    padding: 0 8px 0 8px;
+                    height: 10%;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    text-decoration-color: var(--pumkin);
+                }
+            }
+        }
+    }
+}
+.section3 {
+    background-color: var(--bg-white50);
+    .container {
+        .stat {
+            width: 100%;
+            gap: 24px;
+            .card {
+                border-radius: 10px;
+                width: calc((100% - 24px * 3) / 4);
+                background-color: white;
+                box-shadow: 2px 3px 9px rgba(0, 0, 0, 0.25);
+                height: 149px;
+                padding: 16px;
+                gap: 16px;
+            }
+        }
+    }
+}
+.section4 {
+    background-color: var(--bg-gray50);
+    .container {
+        .testimonials {
+            width: 100%;
+            .card {
+                background-color: white;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                width: 820px;
+                height: 355.79px;
+                padding: 24px;
+                .user {
+                    background-image: url("../assets/users/dog.jpg");
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    border: 2px solid var(--default75);
+                    background-position: 50%;
+                    background-size: 100%;
+                }
+                .text {
+                    width: calc((709.35 / 820) * 820px);
+                }
+            }
+            .card:hover {
+                transform: scale(1);
+            }
+        }
+    }
+}
+.card {
+    transition: 0.25s;
+}
+.card:hover {
+    transform: scale(1.05);
+}

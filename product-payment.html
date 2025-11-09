@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <style>
+        :root {
+            --primary-red: rgba(228, 15, 10, 1);
+            --light-gray-bg: #f8f9fc;
+            --input-bg: #f6f7f9;
+            --border-color: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+        }
+
+        button.color {
+            padding: 0;
+            --color: black;
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+            background-color: var(--color);
+            border-radius: 1px;
+        }
+        button.size {
+            padding: 0;
+            font-size: 15px;
+            font-weight: bold;
+            --color: rgba(0, 0, 0, 0);
+            width: 35px;
+            height: 35px;
+            border: 2px solid black;
+            background-color: var(--color);
+            border-radius: 3px;
+            line-height: 100%;
+            transition: 0.25s;
+        }
+        button.size:hover {
+            --color: rgba(0, 0, 0, 0.1)
+        }
+        .container2 {
+            width: 95%;
+            max-width: 1024px;
+            height: 700px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .order-form {
+            width: calc(60% - 15px);
+            height: 611px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .box {
+            height: 100%;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            height: 100%;
+            justify-content: space-between;
+        }
+        .form-group {
+            width: 100%;
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block; 
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px; 
+            line-height: 140%;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 16px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .form-row {
+            width: 100%;
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+        .name {
+            line-height: 100%;
+        }
+        .price {
+            line-height: 100%;
+            font-weight: 700;
+        }
+
+        .desc {
+            color: var(--text-secondary);
+        }
+
+        .product-options {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-group {
+            flex: 1;
+        }
+
+        .option-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .option-group select {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            background-color: #fff; 
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%236c757d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        .product-card {
+            width: calc(40% - 15px);
+            height: 611px;
+            gap: 24px;
+            background-color: #ffffff;
+            .image {
+                background-image: url("./");
+                border-radius: 8px;
+                background-color: #65676b;
+                background-size: cover;
+                background-position: 50%;
+                height: 100%;
+            }
+        }
+        .summary-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .pagination {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .top {
+            gap: 8px;
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .product-summary {
+                border-left: none;
+                border-top: 1px solid var(--border-color);
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .order-form,
+            .product-summary {
+                padding: 1.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="flex-r between a-center">
+       <menu class="f16 w5 flex-r a-center">
+           <a href="./index.html">
+               Homepage
+           </a>
+           <a href="./product.html">
+               Products
+           </a>
+           <div class="dropdown">
+               <div class="flex-r a-center g-5">
+                   More 
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                       <path class="icon-chevron-down" fill="var(--default)"/>
+                   </svg>
+               </div>
+               <div class="content flex-c">
+                   <a href="./about.html">About us</a>
+                   <a href="./dashboard.html">Contact Information</a>
+                   <a href="./dashboard.html">FAQ</a>
+               </div>
+           </div>
+       </menu>
+       <div class="logo">
+           <img src="./assets/logo.png">
+       </div>
+       <div class="account flex-r">
+           <button class="secondary">
+               Sign In
+           </button>
+           <button class="primary">
+               Register
+           </button>
+       </div>
+   </header>
+    <section class="flex-c">
+        <div class="container2 flex-r">
+            <div class="order-form">
+                <div class="top flex-c">
+                    <div class="f42 w8 line-110">Place your orders</div>
+                    <div class="f18 w5 line-140">Information so that we can contact you should something happen.</div>
+                </div>
+    
+                <form action="/success.html" type="POST" class="form">
+                    <div style="width: 100%;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="0123 456 789">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Gmail</label>
+                                <input type="email" id="email" placeholder="example@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="address" id="address" placeholder="Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Order Amount</label>
+                            <input type="text" id="amount" placeholder="Amount">
+                        </div>
+                    </div>
+                    <button type="submit" class="primary">Confirm Order</button>
+                </form>
+            </div>
+    
+            <div class="product-card flex-c">
+                <div class="image">
+                </div>
+                <div class="box flex-c between">
+                    <div class="flex-c between g-16">
+                        <div class="flex-c g-10">
+                            <div class="f36 w8 name" id="name">Shirt</div>
+                            <div class="f24 w6 price" id="prices">$132,346.568</div>
+                            <div class="description" id="desc">
+                                Item Description Here
+                            </div>
+                        </div>
+                        <div class="select-area flex-c g-10 between">
+                            <div class="option-select flex-r g-10 a-center">
+                                <span class="form-label">
+                                    Color
+                                </span>
+                                <div class="flex-r g-5">
+                                    <button class="color" style="--color: black" onclick="setBackground('black')">
+        
+                                    </button>
+                                    <button class="color" style="--color: white" onclick="setBackground('white')">
+        
+                                    </button>
+                                    <button class="color" style="--color: red" onclick="setBackground('red')">
+        
+                                    </button>
+                                    <button class="color" style="--color: orange" onclick="setBackground('orange')">
+        
+                                    </button>
+                                    <button class="color" style="--color: blue" onclick="setBackground('blue')">
+        
+                                    </button>
+                                    <button class="color" style="--color: #e40f0a" onclick="setBackground(`#e40f0a`)">
+        
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="option-select flex-r g-10 a-center">
+                                <div class="form-label">
+                                    Size
+                                </div>
+                                <div class="flex-r g-5">
+                                    <button class="size">
+                                        S
+                                    </button>
+                                    <button class="size">
+                                        M
+                                    </button>
+                                    <button class="size">
+                                        L
+                                    </button>
+                                    <button class="size">
+                                        XL
+                                    </button>
+                                    <button class="size">
+                                        2XL
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-footer">
+                        <span class="pagination">&lt; 1 / 1 &gt;</span>
+                        <button class="secondary">+ Add Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="a-center j-center">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logo.png" style="filter: invert(1);">
+            </div>
+            <hr>
+            <div class="resources flex-r between">
+                <div class="link-bar">
+                    <div class="link-type">
+                        Resources
+                    </div>
+                    <a href="#" class="link">
+                        FAQ
+                    </a>
+                    <a href="#" class="link">
+                        Terms of Service
+                    </a>
+                    <a href="#" class="link">
+                        Privacy Policy
+                    </a>
+                    <a href="#" class="link">
+                        How to use
+                    </a>
+                </div>
+                <div class="link-bar">
+                    <div class="link-type">
+                        About us
+                    </div>
+                    <a href="#" class="link">
+                        Our Goals
+                    </a>
+                    <a href="#" class="link">
+                        Our Works
+                    </a>
+                    <a href="#" class="link">
+                        Contact information
+                    </a>
+                </div>
+                <div class="link-bar">
+                    <div class="link-type">
+                        Discover
+                    </div>
+                    <a href="#" class="link">
+                        Pricing
+                    </a>
+                    <a href="#" class="link">
+                        Products
+                    </a>
+                    <a href="#" class="link">
+                        Creators
+                    </a>
+                    <a href="#" class="link">
+                        Brands
+                    </a>
+                </div>
+                <div class="link-bar social">
+                    <div class="link-type">
+                        Our Social
+                    </div>
+                    <div class="flex-r g-5 a-center">
+                        <img src="./assets/icon/youtube.svg">
+                        <img src="./assets/icon/facebook.svg">
+                        <img src="./assets/icon/instagram.svg">
+                        <img src="./assets/icon/twitter.svg">
+                        <img src="./assets/icon/linkedin.svg">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright f14 line-140 w4">
+                CompanyName @ 202X. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="./data.js"></script>
+<script>
+    loadProduct()
+    function setBackground(color) {
+        document.querySelector(".image").style.backgroundColor = `${color}`
+    }
+</script>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    <link rel="stylesheet" href="/css/header-footer.css">
+    <link rel="stylesheet" href="/css/product2.css">
+</head>
+<body>
+    <section class="flex-c" style="padding: 0">
+         <header class="flex-r between a-center">
+            <menu class="f16 w5 flex-r a-center">
+                <a href="./index.html">
+                    Homepage
+                </a>
+                <a href="./product.html">
+                    Products
+                </a>
+                <div class="dropdown">
+                    <div class="flex-r a-center g-5">
+                        More 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                            <path class="icon-chevron-down" fill="var(--default)"/>
+                        </svg>
+                    </div>
+                    <div class="content flex-c">
+                        <a href="./about.html">About us</a>
+                        <a href="./dashboard.html">Contact Information</a>
+                        <a href="./dashboard.html">FAQ</a>
+                    </div>
+                </div>
+            </menu>
+            <div class="logo">
+                <img src="./assets/logo.png">
+            </div>
+            <div class="account flex-r">
+                <button class="secondary">
+                    Sign In
+                </button>
+                <button class="primary">
+                    Register
+                </button>
+            </div>
+        </header>
+        <div class="container">
+            <div class="filter-container">
+                <div style="position: sticky; top: 0;">
+                    <div class="filter flex-c">
+                        <div class="type f21 t-f17 m-f13 w8">
+                            Product type
+                        </div>
+                        <div class="option-bar flex-r">
+                            <div class="options">
+                                <label><input type="checkbox">  Shirt</label>
+                            </div>
+                            <div class="options">
+                                <label><input type="checkbox">  Mug</label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="filter flex-c">
+                        <div class="type f21 t-f17 m-f13 w8">
+                            Price
+                        </div>
+                        <div class="option-bar flex-r">
+                            <div class="options">
+                                <label><input type="radio" name="price"> Ascending</label>
+                            </div>
+                            <div class="options">
+                                <label><input type="radio" name="price"> Descending</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-container">
+                <div class="flex-r g-5 bar">
+                    <div class="search-bar">
+                        <input
+                        type="text"
+                        placeholder="Search Product..."
+                        class="search"
+                        />
+                    </div>
+                    <button class="primary create-product">+ Create products</button>
+                </div>
+                <div class="product-section flex-c g-10">
+                    <div class="title between flex-r between">
+                        <div class="f20 w7">
+                            Shirt
+                        </div>
+                        <div class="c-accent f18 w7 flex-r g-5 a-center">
+                            See All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                                <path class="icon-arrow-right" fill="var(--pumkin)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="products">
+                        <div class="card">
+                            <div class="image lazy shirt-1">
+                                <div class="pre-order">
+                                    Pre-order: 5 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-1">
+                                    Knitting sweater
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-2">
+                                <div class="pre-order">
+                                    Pre-order: 1 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-2">
+                                    Developer Shirt
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17" id="shirt-price-2">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-3">
+                                <div class="pre-order">
+                                    Pre-order: 3 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-3">
+                                    Cotton black shirt
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-4">
+                                <div class="pre-order">
+                                    Pre-order: 10 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-4">
+                                    Warrior dog shirt design
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-3" >
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-5">
+                                    Shirt with dog illustration
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-2">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-6">
+                                    Shirt with dog illustration
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-1" id="shirt-7">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name">
+                                    Shirt with dog illustration
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy shirt-4">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name" id="shirt-8">
+                                    Shirt with dog illustration
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-section flex-c g-10">
+                    <div class="title between flex-r between">
+                        <div class="f20 w7">
+                            Shirt
+                        </div>
+                        <div class="c-accent f18 w7 flex-r g-5 a-center">
+                            See All
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                                <path class="icon-arrow-right" fill="var(--pumkin)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="products">
+                        <div class="card">
+                            <div class="mug-1 image lazy">
+                                <div class="pre-order">
+                                    Pre-order: 15 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name">
+                                    Coffee cup with flowers
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy mug-2">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name">
+                                    Coffee cup with stripes
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy mug-1">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name">
+                                    Coffee cup with flowers
+                                </div>
+                                <div class="creator">
+                                    Created by Night Furry
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="image lazy mug-2">
+                                <div class="pre-order">
+                                    Pre-order: 11 days left
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="name">
+                                    Coffee cup with stripes
+                                </div>
+                                <div class="creator">
+                                    Created by Nightily Furrying
+                                </div>
+                                <div class="prices c-accent w7 f17">
+                                    $14.42
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="a-center j-center">
+        <div class="container">
+            <div class="logo">
+                <img src="./assets/logo.png" style="filter: invert(1);">
+            </div>
+            <hr>
+            <div class="resources flex-r between">
+                <div class="link-bar">
+                    <div class="link-type">
+                        Resources
+                    </div>
+                    <a href="#" class="link">
+                        FAQ
+                    </a>
+                    <a href="#" class="link">
+                        Terms of Service
+                    </a>
+                    <a href="#" class="link">
+                        Privacy Policy
+                    </a>
+                    <a href="#" class="link">
+                        How to use
+                    </a>
+                </div>
+                <div class="link-bar">
+                    <div class="link-type">
+                        About us
+                    </div>
+                    <a href="#" class="link">
+                        Our Goals
+                    </a>
+                    <a href="#" class="link">
+                        Our Works
+                    </a>
+                    <a href="#" class="link">
+                        Contact information
+                    </a>
+                </div>
+                <div class="link-bar">
+                    <div class="link-type">
+                        Discover
+                    </div>
+                    <a href="#" class="link">
+                        Pricing
+                    </a>
+                    <a href="#" class="link">
+                        Products
+                    </a>
+                    <a href="#" class="link">
+                        Creators
+                    </a>
+                    <a href="#" class="link">
+                        Brands
+                    </a>
+                </div>
+                <div class="link-bar social">
+                    <div class="link-type">
+                        Our Social
+                    </div>
+                    <div class="flex-r g-5 a-center">
+                        <img src="./assets/icon/youtube.svg">
+                        <img src="./assets/icon/facebook.svg">
+                        <img src="./assets/icon/instagram.svg">
+                        <img src="./assets/icon/twitter.svg">
+                        <img src="./assets/icon/linkedin.svg">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright f14 line-140 w4">
+                CompanyName @ 202X. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./data.js"></script>
+<script src="lazyload.js"></script>
+<script>
+    let list = ['shirt', 'mug'], amount = [4, 2]
+    let product = {
+        "shirt-1": {
+            name: "Knitting sweater",
+            url: "../assets/products/sweater.png",
+            prices: "14.42",
+            desc: "Soft knitting sweater made out of soft yarn"
+        },
+        "shirt-2": {
+            name: "Developer Shirt",
+            prices: "14.42",
+            url: "../assets/products/dev.png",
+            desc: "Cool shirt to let everyone know you're a developers"
+        },
+        "shirt-3": {
+            name: "Cotton black shirt",
+            prices: "14.42",
+            url: "../assets/products/cotton.jpg",
+            desc: "Edgy black shirt"
+        },
+        "shirt-4": {
+            name: "Warrior dog shirt design",
+            url: "../assets/products/dog.jpeg",
+            prices: "14.42",
+            desc: "A dog warrior themed shirt, very cute"
+        },
+        "mug-1": {
+            name: "Coffee cup with flowers",
+            url: "../assets/products/cup.png",
+            prices: "14.42",
+            desc: "A cool cup"  
+        },
+        "mug-2": {
+            name: "Coffee cup with stripes",
+            url: "../assets/products/cup-2.png",
+            prices: "14.42",
+            desc: "A cool cup"  
+        }
+    }
+    for(let a = 0; a < list.length; a++) {
+        for (let b = 1; b <= amount[a]; b++) {
+            let item = document.querySelectorAll(`.${list[a]}-${b}`)
+            item.forEach((items, i) => {
+                    item[i].addEventListener("click", (e) => {
+                        saveProduct(product[`${list[a]}-${b}`]["name"],product[`${list[a]}-${b}`]["url"], product[`${list[a]}-${b}`]["prices"],product[`${list[a]}-${b}`]["desc"]);
+                        window.location.assign('./product-details.html')
+                    })
+                }
+            )
+        }
+    }
+</script>
+</html>
+{}

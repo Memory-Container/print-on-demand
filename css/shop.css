@@ -1,0 +1,183 @@
+.box__main {
+     .container {
+          padding: 60px 0;
+          display: grid;
+          grid-template-columns: 1fr 4fr;
+          justify-content: center;
+          gap: 30px;
+          background-color: var(--bg-main);
+          .inner__filter {
+               display: flex;
+               flex-direction: column;
+               gap: 24px;
+               align-items: center;
+               width: 100%;
+               .Box {
+                    border: 1px solid rgb(240 240 240 / 37%);
+                    background-color: rgb(240 240 240 / 37%);
+                    width: 240px;
+                    height: auto;
+                    padding: 20px 0 20px 10px;
+                    border-radius: 5px;
+                    .checkBox {
+                         display: flex;
+                         flex-direction: column;
+                         gap: 24px;
+                         .inner__wrap {
+                              display: flex;
+                              flex-direction: column;
+                              gap: 12px;
+                              .box__tick {
+                                   display: flex;
+                                   gap: 12px;
+                                   .box {
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        margin: 0;
+                                        width: 16px;
+                                        height: 16px;
+                                        background-color: #fff;
+                                        border: 2px solid #ccc;
+                                        border-radius: 3px;
+                                        cursor: pointer;
+                                        position: relative;
+                                        outline: none;
+                                   }
+                                   .box:checked {
+                                        background-color: #e40f0a;
+                                        border-color: #e40f0a;
+                                   }
+                                   .box::after {
+                                        content: "";
+                                        display: block;
+                                        width: 5px;
+                                        height: 10px;
+                                        border: solid white;
+                                        border-width: 0 3px 3px 0;
+                                        position: absolute;
+                                        top: 40%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%) rotate(45deg);
+
+                                        opacity: 0;
+                                   }
+                                   .box:checked::after {
+                                        opacity: 1;
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+          .add-product {
+               display: flex;
+               flex-direction: column;
+               gap: 50px;
+               width: 95%;
+               .between {
+                    .search-bar {
+                         max-width: 327px;
+                         width: 100%;
+                         height: 40px;
+                         display: flex;
+                         align-items: center;
+                         justify-content: center;
+                         gap: 8px;
+                         background-color: white;
+                         border: 2px solid #d9d9d9;
+                         border-radius: 9999px;
+                         .search {
+                              background-color: transparent;
+                              border: none;
+                              max-width: 271px;
+                              width: 100%;
+                              height: 25px;
+                         }
+                         input[type="search"]:focus {
+                              outline: none;
+                              box-shadow: none;
+                              font-size: 18px;
+                         }
+                         .incon {
+                              width: 16px;
+                              height: 16px;
+                              background-size: cover;
+                              cursor: pointer;
+                         }
+                    }
+                    .pre-oder {
+                         max-width: 171px;
+                         width: 100%;
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                         background-color: #e40f0a;
+                         color: white;
+                         border-radius: 10px;
+                         cursor: pointer;
+                         transition:
+                              transform 0.2s ease,
+                              box-shadow 0.2s ease;
+                    }
+                    .pre-oder:hover {
+                         transform: scale(1.05);
+                         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+                    }
+               }
+               .products__container {
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
+                    gap: 15px;
+                    .card__products {
+                         display: flex;
+                         flex-direction: column;
+                         justify-content: center;
+                         gap: 16px;
+                         height: 348px;
+                         border-radius: 5px;
+                         box-shadow: 0 2px 3px 0 rgb(208, 203, 203);
+                         background-color: rgb(255, 255, 255);
+                         transition:
+                              transform 0.3s ease,
+                              box-shadow 0.3s ease;
+                         .card {
+                              --url: url("../assets/picture/snapedit_1762491822120.jpeg");
+                              background-image: var(--url);
+                              background-size: cover;
+                              border-radius: 5px 5px 0 0;
+                              background-position: 50%;
+                              width: 100%;
+                              height: 65%;
+                              cursor: pointer;
+                         }
+                         .card-1 {
+                              --url: url("../assets/picture/547932043_122138295062715015_5116326200027542882_n.jpg");
+                         }
+                         .card-2 {
+                              --url: url("../assets/picture/snapedit_1762574577085.jpeg");
+                         }
+                         .card-3 {
+                              --url: url("../assets/picture/BeautyPlus-Image-Enhancer-1762575341557.jpg");
+                         }
+                         .card__content {
+                              height: 35%;
+                              display: flex;
+                              flex-direction: column;
+                              gap: 8px;
+                              margin-left: 20px;
+                              .content__information {
+                                   display: flex;
+                                   flex-direction: column;
+                              }
+                         }
+                    }
+                    .card__products:hover {
+                         transform: scale(1.05);
+                         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+                   }
+               }
+          }
+     }
+}

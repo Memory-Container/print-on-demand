@@ -1,0 +1,66 @@
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+}
+.container {
+    width: 95%;
+    max-width: 1280px;
+}
+.section1 {
+    position: relative;
+    --url: url('../assets/background/about-background.jpg');
+    background-size: cover;
+    background-position: 0;
+    height: 576px;
+    padding: 0px 0;
+    background-image: var(--url);
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 80%));
+        z-index: 0;
+    }
+    color: white;
+    .container {
+        padding: 80px 0;
+        height: 496px;
+        width: 100%;
+        text-align: center;
+        .top {
+            gap: 24px;
+        }
+        z-index: 2;
+    }
+}
+.section2 {
+    background-color: var(--bg-gray50);
+    padding: 30px 0;
+    .section-header {
+        margin-bottom: 24px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 80px;
+        .text {
+            gap: 24px;
+            width: calc(50% - 40px);
+        }
+        .image {
+            --url: url("../assets/brands/Name=Kontrastr.png");
+            height: 430px;
+            background-position: 50%;
+            background-size: cover;
+            background-image: var(--url);
+            width: calc(50% - 40px);
+            border-radius: 10px;
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.55);
+        }
+    }
+}

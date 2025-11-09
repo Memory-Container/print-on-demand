@@ -1,0 +1,117 @@
+a {
+    text-decoration: none;
+}
+header {
+    padding: 16px 32px;
+    width: 100%;
+    height: 80px;
+    background-color: #EBEBEB;
+    z-index: 3;
+    menu {
+        gap: 32px;
+        height: min-content;
+    }
+    .account {
+        gap: 16px;
+    }
+}
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    svg {
+        rotate: 0deg;
+        transition: rotate 0.2s ease-in-out;
+        pointer-events: none;
+    }
+    .content {
+        background-color: #EBEBEB;
+        width: max-content;
+        position: absolute;
+        top: 100%;
+        height: 0px;
+        overflow-y: hidden;
+        transition: height 0.2s linear;
+        left: calc(16px * -1);
+        border-radius: 3px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    a {
+        padding: 12px 16px;
+        line-height: 100%;
+    }
+    a:hover {
+        background-color: hsl(0, 0%, 82%);
+    }
+}
+.dropdown:hover .content {
+    height: calc(40px * 3);
+}
+.dropdown:hover svg {
+    rotate: 180deg;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+    .caption {
+        color: var(--pumkin);
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 100%;
+        letter-spacing: 1px;
+    }
+    .title {
+        font-size: 42px;
+        line-height: 100%;
+        font-weight: 800;
+    }
+}
+footer {
+    padding: 22.5px 0;
+    background-color: var(--pumkin);
+    hr {
+        border-color: #C1C7CD;
+    }
+    .container {
+        width: calc((1280 / 1440) * 100%);
+        max-width: 1280px;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        .logo {
+            display: flex;
+            height: min-content;
+            width: min-content;
+        }
+        .link-bar {
+            width: calc((100% - 48px * 3) / 4);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .link-type {
+            padding: 12px 0;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 110%;
+            height: min-content;
+            color: white;
+        }
+        .link {
+            color: white;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        .social {
+            gap: 8px;
+        }
+        .copyright {
+            color: white;
+        }
+    }
+}

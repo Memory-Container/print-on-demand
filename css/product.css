@@ -1,0 +1,315 @@
+header {
+  border-bottom: 1px solid black;
+}
+.box__main {
+     .container {
+        display: flex;
+          background-color: rgba(233, 233, 233, 0.5);
+          .inner__filter {
+              position: sticky;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+               height: 100vh;
+               display: flex;
+               justify-content: center;
+               width: 100%;
+               max-width: 250px;
+               align-items: flex-start;
+               background-color: rgba(233, 233, 233, 0.5);
+               border-right: 1px solid rgba(0, 0, 0, 0.2);
+               box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+               .Box {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 240px;
+                    height: fit-content;
+                    border-radius: 5px;
+                    .checkBox {
+                        padding: 10px 5px;
+                         display: flex;
+                         flex-direction: column;
+                         gap: 12px;
+                         .inner__wrap {
+                              display: flex;
+                              gap: 12px;
+                              flex-wrap: wrap;
+                              .box__tick {
+                                   display: flex;
+                                   gap: 12px;
+                                   align-items: center;
+                                   .box {
+                                        appearance: none;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        margin: 0;
+                                        width: 16px;
+                                        height: 16px;
+                                        background-color: #fff;
+                                        border: 2px solid #ccc;
+                                        border-radius: 3px;
+                                        cursor: pointer;
+                                        position: relative;
+                                        outline: none;
+                                   }
+                                   .box:checked {
+                                        background-color: #e40f0a;
+                                        border-color: #e40f0a;
+                                   }
+                                   .box::after {
+                                        content: "";
+                                        display: block;
+                                        width: 5px;
+                                        height: 10px;
+                                        border: solid white;
+                                        border-width: 0 3px 3px 0;
+                                        position: absolute;
+                                        top: 40%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%) rotate(45deg);
+
+                                        opacity: 0;
+                                   }
+                                   .box:checked::after {
+                                        opacity: 1;
+                                   }
+                              }
+                         }
+                    }
+               }
+          }
+          .add-product {
+            padding-left: 10px;
+               display: flex;
+               flex-direction: column;
+               gap: 50px;
+               width: calc(98% - 250px);
+               .between {
+                    gap: 30px;
+                    .Box {
+                         display: flex;
+                         align-items: center;
+                         max-width: 350px;
+                         width: 95%;
+                         gap: 10px;
+                         .search-bar {
+                              max-width: 327px;
+                              width: 95%;
+                              height: 40px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              gap: 8px;
+                              background-color: white;
+                              border: 2px solid #d9d9d9;
+                              border-radius: 9999px;
+                              .search {
+                                   background-color: transparent;
+                                   border: none;
+                                   min-width: 240px;
+                                   width: 80%;
+                                   height: 25px;
+                              }
+                              input[type="search"]:focus {
+                                   outline: none;
+                                   box-shadow: none;
+                                   font-size: 18px;
+                              }
+                              .incon {
+                                   width: 16px;
+                                   height: 16px;
+                                   background-size: cover;
+                                   cursor: pointer;
+                              }
+                         }
+                         svg {
+                              display: none;
+                         }
+                    }
+                    .pre-order {
+                         height: 40px;
+                         max-width: 171px;
+                         width: 100%;
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                         background-color: #e40f0a;
+                         color: white;
+                         border-radius: 10px;
+                         cursor: pointer;
+                         transition:
+                              transform 0.2s ease,
+                              box-shadow 0.2s ease;
+                    }
+                    .pre-order:hover {
+                         transform: scale(1.05);
+                         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+                    }
+               }
+               .products__container {
+                    height: auto;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 15px;
+                    .card__products {
+                         display: flex;
+                         flex-direction: column;
+                         justify-content: center;
+                         height: 400px;
+                         border-radius: 5px;
+                         box-shadow: 0 2px 3px 0 rgb(208, 203, 203);
+                         background-color: rgb(255, 255, 255);
+                         transition:
+                              transform 0.3s ease,
+                              box-shadow 0.3s ease;
+                         .card {
+                              display: flex;
+                              align-items: flex-start;
+                              padding: 4px;
+                              --url: url("../assets/picture/snapedit_1762491822120.jpeg");
+                              background-image: var(--url);
+                              background-size: 100%;
+                              border-radius: 5px 5px 0 0;
+                              background-position: 50%;
+                              width: 100%;
+                              height: 60%;
+                              cursor: pointer;
+                              transition: 0.25s;
+                              .pre-order {
+                                opacity: 0.6;
+                                border-radius: 2px;
+                              }
+                         }
+                         .name {
+                          font-size: 20px;
+                          font-weight: 700;
+                         }
+                         .creator {
+                          font-size: 13px;
+                          font-weight: 500;
+                          color: #00000080;
+                         }
+                         .card-1 {
+                              --url: url("../assets/picture/547932043_122138295062715015_5116326200027542882_n.jpg");
+                         }
+                         .card-2 {
+                              --url: url("../assets/picture/snapedit_1762574577085.jpeg");
+                         }
+                         .card-3 {
+                              --url: url("../assets/picture/BeautyPlus-Image-Enhancer-1762575341557.jpg");
+                         }
+                         .card__content {
+                              display: flex;
+                              flex-direction: column;
+                              align-items: flex-start;
+                              gap: 5px;
+                              height: 40%;
+                              display: flex;
+                              flex-direction: column;
+                              gap: 8px;
+                              padding: 16px 8px;
+                              justify-content: space-between;
+                              .content__information {
+                                   display: flex;
+                                   flex-direction: column;
+                                   gap: 5px;
+                              }
+                              .price {
+                                   font-size: 22px;
+                                   font-weight: 700;
+                              }
+                         }
+                    }
+                    .card:hover {
+                         background-size: 110%;
+                         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+                    }
+               }
+          }
+     }
+}
+@media only screen and (max-width: 1024px) {
+     .box__main {
+          max-width: 1024px;
+          width: 100%;
+          
+          .container {
+            .inner__filter {
+                max-width: 180px;
+            }
+               .add-product {
+                width: 100%;
+                padding: 10px;
+                    .between {
+                         .pre-order {
+                              font-size: 14px;
+                              font-weight: 500;
+                              width: 95%;
+                         }
+                    }
+                  .products__container {
+                        height: auto;
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                        gap: 5px;
+                  }
+          }
+     }
+}
+@media only screen and (max-width: 650px) {
+     .section1 {
+          display: none;
+     }
+     .box__main {
+        .inner__filter {
+          max-width: 100px;
+        }
+          max-width: 550px;
+          width: 100%;
+          .container {
+               display: flex;
+               gap: 0;
+               padding: 40px 0;
+               grid-template-columns: 1fr;
+               .inner__filter {
+                    display: none;
+               }
+               .add-product {
+                    display: flex;
+                    align-items: center;
+                    max-width: 450px;
+                    width: 100%;
+                    .between {
+                         gap: 20px;
+                         flex-wrap: wrap;
+                         justify-content: center;
+                         max-width: 450px;
+                         width: 95%;
+                         .Box {
+                              justify-content: space-between;
+                              max-width: 400px;
+                              .search-bar {
+                                   .search {
+                                        max-width: 240px;
+                                        min-width: 0;
+                                   }
+                              }
+                              svg {
+                                   display: block;
+                                   cursor: pointer;
+                              }
+                         }
+                    }
+               }
+                    .products__container {
+                         gap: 20px;
+                         grid-template-columns: repeat(auto-fit, minmax(217px, 400px));
+                         .card__products {
+                              height: 400px;
+                         }
+                    }
+               }
+          }
+     }
+}
